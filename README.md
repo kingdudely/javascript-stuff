@@ -1,0 +1,4 @@
+# usage: 
+```
+  await require(url)
+```
