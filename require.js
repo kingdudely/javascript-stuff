@@ -1,3 +1,5 @@
 async function require(a){
-    window.eval(await (await fetch(a)).text());
+    fetch(a)
+    .then(response => response.text())
+    .then(window.eval)
 }
