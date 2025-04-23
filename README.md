@@ -1,4 +1,1 @@
-# usage: 
-```
-  await require(url)
-```
+Cool little functions I made in javascript
