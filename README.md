@@ -1,1 +1,1 @@
-Cool little functions I made in javascript
+Cool Javascript Things?
