@@ -1,3 +1,1 @@
-async function sleep(milliseconds) {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-}
+const sleep = timeout => new Promise(resolve => setTimeout(resolve, timeout)); // milliseconds
