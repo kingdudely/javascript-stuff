@@ -1,3 +1,1 @@
-function newGUID() {
-    return URL.createObjectURL(new Blob).match(/[a-z0-9-]+$/)?.[0];
-}
+const newGUID = () => URL.createObjectURL(new Blob).match(/[a-z0-9-]+$/)?.[0];
