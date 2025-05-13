@@ -1,13 +1,20 @@
- function upload(file) {
+function upload(content, expiration = 60, protected = true) {
     const formData = new FormData();
-    formData.append('c', file); // Content
-    formData.append('e', '60'); // Expiration (in seconds)
-    formData.append('p', 'true'); // Long URL
+    formData.append('c', content); // Content
+    formData.append('e', expiration); // Expiration (in seconds)
+    formData.append('p', protected); // Long URL
 
     return fetch('https://pb.angelrose.org/', {
             method: 'POST',
             body: formData,
-    })
-        .then(response => response.json())
-        .then(data => data.suggestUrl);
- }
+        })
+        .then(response => response.text())
+        .then(text => {
+            try {
+                const json = JSON.parse(text);
+                return json?.suggestUrl || json?.url || json
+            } catch {
+                return text
+            }
+        })
+}
