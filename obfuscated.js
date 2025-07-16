@@ -4,7 +4,7 @@ setTimeout(() => <!-- return (return and function) /*
              [ 0,`1
     `]<!--,`2`]), if 1 then std::cout << "Hello, world?" end 
     -->
-    ) + ([]+new console.log)[10]?.indexOf + [][[, ,+1 ,, , , ,, ,, , ,, ,  , , , , , ,]]).match()[0]) || +void+[]+-_-+wow?.awef?.()?.[69]).constructor("console.log`Hello, world!`")(), Infinity) * 
-    --> (~!@#$%^&*(){}|:"<>?_+,./-=[]\;') == (0 / true - false)
+    ) + ([]+new console.log)[10]?.indexOf + [][[, ,+1 ,, , , ,, ,, , ,, ,  , , , , , ,]]).match()[0]) || +void+[]+-_-+wow?.awef?.()?.[69]).constructor("console.log`Hello, world!`")(), true / false) * 
+    --> (~!@#$%^&*(){}|:"<>?_+,./-=[]\;') === ("BA" + ("A" - "A") + "A")
 
     null+ +![] + [],["help",,,,,"how do i do thissssssssssssss",,,,[,,,,,]] + []+undefined?.bro
