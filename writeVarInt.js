@@ -1,3 +1,4 @@
+// compact
 function writeVarInt(value, outputBuffer, offset = 0) {
 	do {
 		outputBuffer[offset++] = (value & 127) | ((value > 127) << 7);
@@ -6,6 +7,7 @@ function writeVarInt(value, outputBuffer, offset = 0) {
 	return offset;
 }
 
+// compact bigint
 function writeVarInt(value, outputBuffer, offset = 0n) { 
 	value = BigInt(value);
 	
@@ -16,6 +18,7 @@ function writeVarInt(value, outputBuffer, offset = 0n) {
 	return offset;
 }
 
+// no bitwise operations
 function writeVarInt(value, outputBuffer, offset = 0) {
 	value = Math.floor(value); 
 	
