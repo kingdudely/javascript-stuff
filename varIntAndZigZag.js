@@ -1,5 +1,3 @@
-const encodeZigZag = (x) => Math.abs(x) * 2 - (x < 0);
-
 function writeUnsignedVarInt(value, outputBuffer, offset) { 
 	if (!Number.isSafeInteger(value) || value < 0) {
 		throw new RangeError(`Invalid/unsafe unsigned integer: ${value}`);
@@ -12,6 +10,7 @@ function writeUnsignedVarInt(value, outputBuffer, offset) {
 	return offset;
 };
 
+const encodeZigZag = (x) => Math.abs(x) * 2 - (x < 0);
 function writeSignedVarInt(value, outputBuffer, offset) {
 	if (!Number.isSafeInteger(value)) {
 		throw new RangeError(`Unsafe signed integer: ${value}`);
