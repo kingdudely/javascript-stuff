@@ -1,34 +1,11 @@
-// compact
-function writeVarInt(value, outputBuffer, offset = 0) {
-	do {
-		outputBuffer[offset++] = (value & 127) | ((value > 127) << 7);
-	} while (value >>>= 7);
-  
-	return offset;
-}
-
-// compact bigint
-function writeVarInt(value, outputBuffer, offset = 0n) { 
-	value = BigInt(value);
-	
-	do {
-		outputBuffer[offset++] = Number((value & 127n) | (BigInt(value > 127n) << 7n));
-	} while (value >>= 7n);
-		
-	return offset;
-}
-
-// no bitwise operations
-function writeVarInt(value, outputBuffer, offset = 0) {
-	value = Math.floor(value); 
-	
-	while (value >= 128) {
-		outputBuffer[offset++] = (value % 128) + 128;
-		value = Math.floor(value / 128); 
+function writeVarInt(value, outputBuffer, offset = 0) { 
+	if (!Number.isSafeInteger(value) || value < 0) {
+		throw new RangeError(`Invalid/unsafe unsigned integer: ${value}`);
 	}
-	
-	outputBuffer[offset++] = value;
+
+	do {
+		outputBuffer[offset++] = (value & 0x7F) | (value > 0x7F ? 0x80 : 0);
+	} while ((value = Math.floor(value / 128)) > 0);  
+
 	return offset;
 }
-
-
